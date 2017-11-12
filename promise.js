@@ -15,13 +15,11 @@ let b = 4;
 
 asyncAdd(a, b).then( (res) => {
     console.log(`Result: ${ res }`);
-    return asyncAdd(res, 33); // promise chaining
-}, (err) => {
-    console.log(err);
+    return asyncAdd(res, '33'); // promise chaining
 }).then((res) => { // resolve of the second promise
     console.log(`new result ${ res }`);
-}, (err) => {
-    console.log(err);
+}).catch((errorMessage) => {
+    console.log(errorMessage);
 })
 
 // let somePromise = new Promise((resolve, reject) => {
